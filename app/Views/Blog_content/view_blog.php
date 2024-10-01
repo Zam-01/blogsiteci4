@@ -2,7 +2,6 @@
 <?= $this->section('body-content'); ?>
 <main class="view-content">
   <header class="user-data">
-
     <img src="/img/Hello.png" alt="">
     <article>
       <span>
@@ -21,8 +20,18 @@
       </article>
     </section>
     <div class="back">
-      <a href="/back" class="btn btn-outline-primary">Kembali</a>
-      <a href="<?= $user_view['Referensi']; ?>" class="btn btn-outline-primary">Referensi Blog saya</a>
+      <div class="buttons">
+        <a href="/edit/<?= $user_view['id']; ?>" class="btn btn-outline-info">Edit</a>
+        <form action="/hapus/<?= $user_view['id']; ?>" method="post">
+          <?= csrf_field(); ?>
+          <input type="hidden" name="_method" value="delete">
+          <button class=" btn btn-outline-danger"  type="submit">Delete</a>
+        </form>
+      </div>
+      <div class="user-not-login">
+        <a href="/back" class="btn btn-outline-primary">Kembali</a>
+        <a href="<?= $user_view['Referensi']; ?>" class="btn btn-outline-primary">Referensi Blog saya</a>
+      </div>
     </div>
   </div>
   <hr>

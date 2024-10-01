@@ -306,4 +306,30 @@ flex-wrap: wrap;  */
   box-sizing: border-box;
   padding-bottom: 100vh;
 }
-
+.back {
+  margin-top: 3em;
+  display: flex;
+  justify-content: space-between;
+}
+.back .buttons,
+.user-not-login {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 2.3em;
+}
+.buttons a {
+  width: 5em;
+}
+/* pesan blog ketika berhasil dan tidak berhasil */
+.pesan{
+  position: absolute;
+  left: 30%;
+  bottom: 54%;
+  width: 50%;
+  /* background-color: aquamarine; */
+}
+.pesan h3{
+  margin: 1px auto;
+  text-align: center;
+}

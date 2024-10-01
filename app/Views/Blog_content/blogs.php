@@ -13,6 +13,15 @@
       </article>
     </header>
   </section>
+  <div class="pesan">
+    <?php if (session()->getFlashdata('berhasil')): ?>
+      <h3><?= session()->getFlashdata('berhasil'); ?></h3>
+      <?php endif ?>
+    <?php if (session()->getFlashdata('hapus')): ?>
+      <h3><?= session()->getFlashdata('hapus'); ?></h3>
+      <?php endif ?>
+    </div>
+  <hr>
   <!-- pengulangan data buat disini -->
   <div class="views">
     <?php foreach ($blog as $v) : ?>
