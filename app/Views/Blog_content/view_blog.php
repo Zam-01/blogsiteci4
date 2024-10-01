@@ -7,7 +7,7 @@
       <span>
         <h1>Hallo saya <?= $user_view['Nama']; ?></h1>
         <h2>Judul blogs <?= $user_view['Judul_blogs']; ?></h2>
-        <h2>Tanggal <?= $user_view['Tanggal_create']; ?></h2>
+        <h2>Tanggal Pembuatan <?= $user_view['Tanggal_create']; ?></h2>
       </span>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla molestias consequatur sequi delectus doloribus illum nesciunt error debitis assumenda aliquid maiores nihil vel perspiciatis, deleniti cum sit laborum ad cumque nobis nemo inventore earum. Quidem similique reprehenderit nostrum odit libero enim quod. Dolorem, nam quis.</p>
     </article>
@@ -20,6 +20,7 @@
       </article>
     </section>
     <div class="back">
+      <?php if(session()->get('login') === true) :?>
       <div class="buttons">
         <a href="/edit/<?= $user_view['id']; ?>" class="btn btn-outline-info">Edit</a>
         <form action="/hapus/<?= $user_view['id']; ?>" method="post">
@@ -32,6 +33,12 @@
         <a href="/back" class="btn btn-outline-primary">Kembali</a>
         <a href="<?= $user_view['Referensi']; ?>" class="btn btn-outline-primary">Referensi Blog saya</a>
       </div>
+      <?php else: ?>
+        <div class="user-not-login">
+          <a href="/back" class="btn btn-outline-primary">Kembali</a>
+          <a href="<?= $user_view['Referensi']; ?>" class="btn btn-outline-primary">Referensi Blog saya</a>
+        </div>
+      <?php endif ?>
     </div>
   </div>
   <hr>

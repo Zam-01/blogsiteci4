@@ -12,8 +12,10 @@
     <li class="nav-item me-2">
       <a class="nav-link" href="/create">Create your Blogs</a>
     </li>
-    <li class="nav-item me-2">
-      <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-    </li>
+    <?php if (session()->get('login') === true): ?>
+      <li class="nav-item me-2">
+        <a class="nav-link" href="/Logout">Logout</a>
+      </li>
+    <?php endif ?>
   </ul>
 </nav>
